@@ -1,0 +1,17 @@
+Detect Loop in linked list.txt
+
+int detectloop(Node *head) {
+    Node *p,*q;
+    p=q=head;
+    do{
+        p=p->next;
+        q=q->next;
+        if(p)p=p->next;
+        else p=NULL;
+    }while(p!=q && p && q);
+    
+    if(p==q)
+    return 1;
+    else return 0;
+    // your code here
+}
