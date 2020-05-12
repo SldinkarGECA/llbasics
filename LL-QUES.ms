@@ -1,0 +1,22 @@
+
+##Nth node from end of linked list
+
+int getNthFromLast(Node *head, int n)
+{
+    Node *p,*q;
+    p=q=head;
+    if(head!=NULL)
+    {
+        for(int i=0;i<n;i++)
+        {
+            if(!p)return -1;
+            p=p->next;
+        }
+        while(p!=NULL)
+        {
+            q=q->next;
+            p=p->next;
+        }
+    }
+    return q->data;
+}
