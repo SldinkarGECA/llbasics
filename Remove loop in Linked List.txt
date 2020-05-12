@@ -1,0 +1,31 @@
+Remove loop in Linked List.txt
+
+
+void removeTheLoop(Node *head)
+{
+     Node *p,*q;
+    p=q=head;
+    do{
+        p=p->next;
+        q=q->next;
+        if(p)p=p->next;
+        else p=NULL;
+    }while(p!=q && p && q);
+    Node *p1,*q1;
+        p1=head;
+    if(p==q)
+    {
+        while(1)
+        {
+            q1=q;
+            while(q1->next!=q && q1->next!=p1)
+            q1=q1->next;
+            
+            if(q1->next==p1)
+            break;
+            
+            p1=p1->next;
+        }
+        q1->next=NULL;
+    }
+}
